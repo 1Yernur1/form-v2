@@ -2,26 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.max-width {
+  @apply max-w-[1024px] mx-auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.padding-x {
+  @apply sm:px-16 px-6;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.padding-y {
+  @apply py-4;
+}
+
+.form__title {
+  @apply text-base font-semibold leading-7 text-gray-900;
+}
+
+.form__label {
+  @apply block font-medium leading-6 text-sm text-gray-900;
+}
+
+.form__label-top {
+  @apply block font-semibold leading-6 text-sm text-gray-900;
+}
+
+.form__input {
+  @apply block w-full rounded-md border-0 py-[6px] px-[12px] text-gray-900 shadow-sm ring-1 ring-gray-300 ring-inset placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
+}
+
+.form__input-checkbox {
+  @apply relative w-7 h-7 appearance-none before:absolute before:top-0 before:left-0 before:h-7 before:w-7 before:rounded-md before:shadow-sm before:ring-1 before:ring-inset before:ring-gray-300 before:text-center;
+}
+
+.form__input-checkbox:checked:before {
+  content: '✔';
+  background-color: #2563eb;
+  @apply text-white;
 }
